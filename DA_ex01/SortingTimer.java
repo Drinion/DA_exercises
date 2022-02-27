@@ -41,8 +41,8 @@ public class SortingTimer {
     }
     StringBuilder builder_merge_sort = new StringBuilder();
     StringBuilder builder_insertion_sort = new StringBuilder();
-    builder_merge_sort.append("Iterations,Time" +"\n");
-    builder_insertion_sort.append("Iterations,Time" +"\n");
+    builder_merge_sort.append("#Elements,Time" +"\n");
+    builder_insertion_sort.append("#Elements,Time" +"\n");
 
     for (int i : tested_array_lengths) {
 
