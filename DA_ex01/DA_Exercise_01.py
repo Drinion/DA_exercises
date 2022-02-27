@@ -13,32 +13,31 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 
-# In[6]:
+# In[3]:
 
 
-plt.rcParams["figure.figsize"] = [7.50, 3.50]
 plt.rcParams["figure.autolayout"] = True
 
 
-# In[9]:
+# In[4]:
 
 
 df_insertion = pd.read_csv('/Users/dariomarti/Projects/DA_exercises/DA_ex01/time_insertion_sort.csv')
 
 
-# In[10]:
+# In[5]:
 
 
 df_insertion.set_index('#Elements').plot()
 
 
-# In[11]:
+# In[6]:
 
 
 df_merge = pd.read_csv('/Users/dariomarti/Projects/DA_exercises/DA_ex01/time_merge_sort.csv')
 
 
-# In[12]:
+# In[7]:
 
 
 df_merge.set_index('#Elements').plot()
