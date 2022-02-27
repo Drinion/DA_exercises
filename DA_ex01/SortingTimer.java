@@ -26,7 +26,7 @@ public class SortingTimer {
     Random rd = new Random(); // creating Random object
 
     ArrayList<Integer> tested_array_lengths = new ArrayList<Integer>();
-    for(int n = 30000; n <= 300000; n += 30000){
+    for(int n = 30000; n <= 300000; n += 10000){
       tested_array_lengths.add(n);
     }
 
