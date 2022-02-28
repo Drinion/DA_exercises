@@ -53,7 +53,7 @@ public class SortingTimer {
 
       int[] array = new int[i];
       for (int j = 0; j < array.length; j++) {
-        array[j] = rd.nextInt(1000); // storing random integers in an array
+        array[j] = rd.nextInt(100000); // storing random integers in an array
       }
 
       builder_insertion_sort.append(i+",");
@@ -64,7 +64,7 @@ public class SortingTimer {
 
       int[] array2 = new int[i];
       for (int p = 0; p < array2.length; p++) {
-        array2[p] = rd.nextInt(100000);
+        array2[p] = rd.nextInt(1000); // Limit set to 1000 to reduce spikes in graph
       }
 
       builder_merge_sort.append(i+",");
