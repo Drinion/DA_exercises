@@ -75,6 +75,7 @@ public class SortingTimer {
     pw_merge_sort.close();
     pw_insertion_sort.write(builder_insertion_sort.toString());
     pw_insertion_sort.close();
+    System.out.println("CSV generated!");
   }
 
   public static void main(String[] args)
