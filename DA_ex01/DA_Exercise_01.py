@@ -25,10 +25,10 @@ plt.rcParams["figure.autolayout"] = True
 df_insertion = pd.read_csv('/Users/dariomarti/Projects/DA_exercises/DA_ex01/time_insertion_sort.csv')
 
 
-# In[5]:
+# In[10]:
 
 
-df_insertion.set_index('#Elements').plot()
+df_insertion.set_index('#Elements').plot(xlabel='Anzahl Elemente', ylabel='Zeit')
 
 
 # In[6]:
@@ -37,10 +37,10 @@ df_insertion.set_index('#Elements').plot()
 df_merge = pd.read_csv('/Users/dariomarti/Projects/DA_exercises/DA_ex01/time_merge_sort.csv')
 
 
-# In[7]:
+# In[11]:
 
 
-df_merge.set_index('#Elements').plot()
+df_merge.set_index('#Elements').plot(xlabel='Anzahl Elemente', ylabel='Zeit')
 
 
 # In[ ]:
