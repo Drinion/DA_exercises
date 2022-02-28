@@ -3,7 +3,6 @@ import da_ex01.Timer;
 
 import java.util.*;     //for Random and Arraylist
 import java.lang.*;     // for Integer object
-import java.io.File;
 import java.io.PrintWriter;
 
 public class SortingTimer {
@@ -32,15 +31,15 @@ public class SortingTimer {
       insertion_tested_array_lengths.add(n);
     }
 
-    for(int n = 30000; n <= 300000; n += 10000){
+    for(int n = 30000; n <= 3000000; n += 10000){
       merge_tested_array_lengths.add(n);
     }
 
     PrintWriter pw_merge_sort = null;
     PrintWriter pw_insertion_sort = null;
     try {
-      pw_merge_sort = new PrintWriter(new File("time_merge_sort.csv"));
-      pw_insertion_sort = new PrintWriter(new File("time_insertion_sort.csv"));
+      pw_merge_sort = new PrintWriter("time_merge_sort.csv");
+      pw_insertion_sort = new PrintWriter("time_insertion_sort.csv");
     } catch (Exception e) {
       System.out.println("File not found");
     }
@@ -53,7 +52,7 @@ public class SortingTimer {
 
       int[] array = new int[i];
       for (int j = 0; j < array.length; j++) {
-        array[j] = rd.nextInt(100000); // storing random integers in an array
+        array[j] = rd.nextInt(1000); // storing random integers in an array
       }
 
       builder_insertion_sort.append(i+",");
