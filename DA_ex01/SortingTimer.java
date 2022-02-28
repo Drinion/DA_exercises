@@ -27,15 +27,15 @@ public class SortingTimer {
 
     ArrayList<Integer> insertion_tested_array_lengths = new ArrayList<Integer>();
     ArrayList<Integer> merge_tested_array_lengths = new ArrayList<Integer>();
+
     for(int n = 30000; n <= 300000; n += 10000){
       insertion_tested_array_lengths.add(n);
     }
 
-    for(int n = 30000; n <= 3000000; n += 10000){
+    for(int n = 30000; n <= 300000; n += 10000){
       merge_tested_array_lengths.add(n);
     }
 
-    System.out.println("array length, insertion sort time, merge sort time"); //if not "pseudo CSV" output delete this line
     PrintWriter pw_merge_sort = null;
     PrintWriter pw_insertion_sort = null;
     try {
@@ -53,7 +53,7 @@ public class SortingTimer {
 
       int[] array = new int[i];
       for (int j = 0; j < array.length; j++) {
-        array[j] = rd.nextInt(1000); // storing random integers in an array
+        array[j] = rd.nextInt(100000); // storing random integers in an array
       }
 
       builder_insertion_sort.append(i+",");
