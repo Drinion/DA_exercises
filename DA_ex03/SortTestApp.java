@@ -5,6 +5,7 @@
  */
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class SortTestApp {
 
@@ -40,9 +41,11 @@ public class SortTestApp {
 
 			System.out.print("   Erster QuickSort: " + sortDuration + " ms");
 
-			// Den Array nochmals sortieren und Zeit nehmen:
+			// Den Array nochmals sortieren und Zeit nehmen
+                        Random rand = new Random();
+                        int index = rand.nextInt(numOfRecords/100);
 			timer.reset();
-			QuickSort.quickSort(array, 0, array.size()-1, comp);
+			QuickSort.quickSort(array, 0, index, comp);
 			sortDuration = timer.timeElapsed();
 
 			System.out.print("   QuickSort auf den bereits sortierten Daten: " + sortDuration + " ms");
