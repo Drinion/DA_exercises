@@ -8,9 +8,9 @@
 
 public class MatrikelNrComparator implements java.util.Comparator<StudentIn> {
 
-  /** Vergleicht Objekt a mit Objekt b und
-   *  liefert -1 (wenn a<b), 0 (wenn a=b) oder +1 (wenn a>b)
-   */
+  // /** Vergleicht Objekt a mit Objekt b und
+  //  *  liefert -1 (wenn a<b), 0 (wenn a=b) oder +1 (wenn a>b)
+  //  */
   public int compare(StudentIn a, StudentIn b) {
     return signum(a.getMatrikelNr() - b.getMatrikelNr());
   }
