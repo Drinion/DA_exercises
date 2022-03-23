@@ -35,7 +35,7 @@ public class RadixSort {
     }
 
     for(int i = 0; i < listofLists.size(); i++) {
-      int newD = listofLists.get(i).get(0).length();
+      int newD = listofLists.get(i).get(0).replaceAll("\\s+","").length();
       radixSort(listofLists.get(i), newD);
     }
   }
