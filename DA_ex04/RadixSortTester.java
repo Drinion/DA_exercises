@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.io.*;
 
 public class RadixSortTester {
 
@@ -67,11 +68,11 @@ public class RadixSortTester {
 
     for(int k=0; k<n.length; k++) {
       ArrayList<String> testData = generateTestData(10, 5);
-      System.out.println(testData);
       Timer t = new Timer();
       t.reset();
       RadixSort.modifiedRadixSort(testData, d);
       System.out.printf("Number of elements of modified: %d, Time: %dms\n", n[k], t.timeElapsed());
     }
   }
+
 }
