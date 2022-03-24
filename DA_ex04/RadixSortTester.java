@@ -56,7 +56,7 @@ public class RadixSortTester {
 
     for(int i=0; i<n.length; i++)
     {
-      ArrayList<String> testData = generateTestData(n[i], d);
+      ArrayList<String> testData = generateTestData(n[i], 10);
 
       Timer t = new Timer();
       t.reset();
@@ -67,7 +67,7 @@ public class RadixSortTester {
     }
 
     for(int k=0; k<n.length; k++) {
-      ArrayList<String> testData = generateTestData(10, 5);
+      ArrayList<String> testData = generateTestData(n[k], 10);
       Timer t = new Timer();
       t.reset();
       RadixSort.modifiedRadixSort(testData, d);
