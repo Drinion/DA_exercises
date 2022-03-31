@@ -30,8 +30,7 @@ public class KDTreeVisualization extends Component{
     this.h=h;
     this.n=n;
 
-    this.kdRoot = null;
-  }
+    this.kdRoot = null; }
 
   /**
    * Initializes the image
@@ -150,7 +149,6 @@ public class KDTreeVisualization extends Component{
    * @return the nearest neighbor of p
    */
   private Point treeSearchNN(Point p){
-    //to be implemented
     return p;
   }
 
