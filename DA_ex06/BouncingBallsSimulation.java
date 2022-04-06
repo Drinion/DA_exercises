@@ -7,7 +7,7 @@ import java.util.*;
  */
 public class BouncingBallsSimulation extends Component implements Runnable {
 
-    LinkedList<Ball> balls;    // List of balls.
+    ArrayList<Ball> balls;    // List of balls.
     Image img;                // Image to display balls.
     int w, h;                // Width an height of image.
     Graphics2D gi;            // Graphics object to draw balls.
@@ -24,6 +24,18 @@ public class BouncingBallsSimulation extends Component implements Runnable {
      * @param r radius of balls.
      * @param v initial velocity of balls.
      */
+
+    public static int hashTableSize = 60;
+
+    public int xCoordinate(Ball ball) {
+      int coordinate = (int)Math.floor((ball.x * hashTableSize - 1) / w);
+      return coordinate;
+    }
+
+    public int yCoordinate(Ball ball) {
+      int coordinate = (int)Math.floor((ball.y * hashTableSize - 1) / w);
+      return coordinate;
+    }
     public BouncingBallsSimulation(int w, int h, int n, float r, float v)
     {
         this.r = r;
@@ -32,7 +44,14 @@ public class BouncingBallsSimulation extends Component implements Runnable {
         this.h = h;
 
         // Initialize balls by distributing them randomly.
-        balls = new LinkedList<Ball>();
+        balls = new ArrayList<Ball>();
+        for(int i = 0; i < hashTableSize; i++) {
+          var rowList = new ArrayList<LinkedList<Ball>>();
+          balls.add(rowList);
+          for(int j = 0; j < hashTableSize; j++) {
+            rowList.add(new LinkedList<>());
+          }
+        }
         for(int i=0; i<n; i++)
         {
             float vx = 2*(float)Math.random()-1;
