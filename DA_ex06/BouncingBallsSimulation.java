@@ -47,7 +47,6 @@ public class BouncingBallsSimulation extends Component implements Runnable {
         balls = new ArrayList<Ball>();
         for(int i = 0; i < hashTableSize; i++) {
           var rowList = new ArrayList<LinkedList<Ball>>();
-          balls.add(rowList);
           for(int j = 0; j < hashTableSize; j++) {
             rowList.add(new LinkedList<>());
           }
