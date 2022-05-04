@@ -22,7 +22,11 @@ public class SeamCarving {
         int height = img.getHeight();
         var costs = new float[width][height];
 
-        // To be implemented.
+        for(int i=1; i < height; i++) {
+          for(int j=1; j < width; j++) {
+            costs[j][i] = energy(img, i, j);
+          }
+        }
         return costs;
     }
 
@@ -40,6 +44,56 @@ public class SeamCarving {
     {
         var seam = new int[height];
         // To be implemented.
+        float min = costs[0][height-1];
+        int index = 0;
+
+        for(int i=0; i<width; i++) {
+          if(costs[i][height-1] < min) {
+            min = costs[i][height-1];
+            index = i;
+          }
+        }
+
+        for(int j=height; j>0; j--) {
+          if(index == width) {
+            float up = costs[j-1][index];
+            float upLeft = costs[j-1][index-1];
+
+            if(up < upLeft) {
+              seam[j] = (int) up;
+            }
+            else if(upLeft < up) {
+              seam[j] = (int) upLeft;
+            }
+          }
+          else if(index == 0) {
+            float up = costs[index][j-1];
+            float upRight = costs[index][j-1];
+
+            if(up < upRight) {
+              seam[j] = (int) up;
+            }
+            else if(upRight < up) {
+              seam[j] = (int) upRight;
+            }
+          }
+          else {
+            float up = costs[index][j-1];
+            float upLeft = costs[index-1][j-1];
+            float upRight = costs[index+1][j-1];
+
+            if(up < upLeft && up < upRight) {
+              seam[j] = (int) up;
+            }
+            else if(upLeft < up && upLeft < upRight) {
+              seam[j] = (int) upLeft;
+            }
+            else if(upRight < up && upRight < upLeft) {
+              seam[j] = (int) upRight;
+            }
+          }
+        }
+        System.out.println(seam);
         return seam;
     }
 
