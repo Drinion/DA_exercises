@@ -93,7 +93,6 @@ public class SeamCarving {
             }
           }
         }
-        System.out.println(seam);
         return seam;
     }
 
